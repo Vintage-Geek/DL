@@ -1,0 +1,33 @@
+{
+  "brain_tumor_mri": {
+    "name": "brain_tumor_mri",
+    "adapter": "brain_tumor_mri",
+    "root": "data/brain_tumor_mri",
+    "source": "https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset",
+    "grayscale_compatible": true
+  },
+  "retinal_oct": {
+    "name": "retinal_oct",
+    "adapter": "retinal_oct",
+    "root": "data/retinal_oct",
+    "source": "https://data.mendeley.com/datasets/rscbjbr9sj/3",
+    "grayscale_compatible": true
+  },
+  "colorectal_he": {
+    "name": "colorectal_he",
+    "adapter": "colorectal_he",
+    "root": "data/colorectal_he",
+    "source": "https://zenodo.org/records/1214456",
+    "grayscale_compatible": false
+  },
+  "ham10000": {
+    "name": "ham10000",
+    "adapter": "ham10000",
+    "root": "data/ham10000",
+    "metadata_csv": "HAM10000_metadata.csv",
+    "images_dir": ".",
+    "columns": {"image_id": "image_id", "label": "dx", "lesion_id": "lesion_id"},
+    "grayscale_compatible": false,
+    "source": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T"
+  }
+}

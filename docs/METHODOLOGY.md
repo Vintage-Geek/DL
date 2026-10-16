@@ -1,0 +1,7 @@
+# Experiment Protocol Notes
+
+Use one ResNet-50 architecture and keep its classifier, optimizer, input size, split seed, normalization, and training budget identical across preprocessing arms. Only the configured image preprocessing method should change. P3 must remain excluded for RGB datasets unless grayscale conversion is part of the declared research question. Pretrained weights are optional and disabled by default; enabling them may retrieve weights through torchvision and must be recorded in the study protocol.
+
+Each arm selects its saved checkpoint by **validation macro-F1**. Do not inspect test metrics to pick arms or tune settings. Run evaluation after configuration/model selection is frozen, then use comparison outputs as final reporting artifacts. Class supports and split manifests should accompany results because medical datasets can be imbalanced and lesion/group distributions matter.
+
+Grad-CAM targets the final residual block (`layer4[-1]`) by default. It gives a class-conditioned saliency visualization; it is qualitative, sensitive to model/inputs, and is not a clinical explanation or validation. Quantitative explanation stability is not implemented. Test metrics from one seed are not repeated-run estimates; repeat the full protocol with predeclared seeds if computationally practical and report variation separately.

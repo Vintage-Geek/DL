@@ -1,0 +1,28 @@
+{
+  "outputs_dir": "outputs",
+  "dataset": {
+    "name": "brain_tumor_mri",
+    "adapter": "brain_tumor_mri",
+    "root": "data/brain_tumor_mri",
+    "grayscale_compatible": true
+  },
+  "experiment": {
+    "seed": 42,
+    "deterministic": true,
+    "preprocessing": "P0",
+    "preprocessing_arms": ["P0", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "CLAHE"]
+  },
+  "data": {
+    "image_size": 224,
+    "split_ratios": [0.7, 0.15, 0.15],
+    "imagenet_normalization": true
+  },
+  "training": {
+    "epochs": 30,
+    "batch_size": 32,
+    "learning_rate": 0.0001,
+    "workers": 0,
+    "device": "auto",
+    "pretrained": false
+  }
+}
